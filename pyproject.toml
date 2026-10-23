@@ -47,11 +47,12 @@ dependencies = [
     "requests>=2.32.5",
     "beautifulsoup4>=4.14.2",
     "PyGithub>=2.5.0",
-    "GitPython>=3.1.40",
+    "GitPython>=3.1.59",
     "httpx>=0.28.1", # Required for async scraping (core feature)
     "anthropic>=0.76.0", # Required for AI enhancement (core feature)
     "PyMuPDF>=1.24.14",
-    "Pillow>=11.0.0",
+    "Pillow>=13.0.0; python_version >= '3.11'",
+    "Pillow>=12.3.0; python_version < '3.11'",
     "pydantic>=2.12.3",
     "pydantic-settings>=2.11.0",
     "python-dotenv>=1.1.1",
@@ -182,7 +183,7 @@ weaviate = [
 ]
 
 sentence-transformers = [
-    "sentence-transformers>=2.2.0",
+    "sentence-transformers>=5.6.0",
 ]
 
 pinecone = [
@@ -192,7 +193,7 @@ pinecone = [
 rag-upload = [
     "chromadb>=0.4.0",
     "weaviate-client>=3.25.0",
-    "sentence-transformers>=2.2.0",
+    "sentence-transformers>=5.6.0",
     "pinecone>=5.0.0",
 ]
 
@@ -241,7 +242,7 @@ browser = [
 embedding = [
     "fastapi>=0.109.0",
     "uvicorn>=0.27.0",
-    "sentence-transformers>=2.3.0",
+    "sentence-transformers>=5.6.0",
     "numpy>=1.24.0",
     "voyageai>=0.2.0",
 ]
@@ -270,7 +271,7 @@ all = [
     "weaviate-client>=3.25.0",
     "pinecone>=5.0.0",
     "fastapi>=0.109.0",
-    "sentence-transformers>=2.3.0",
+    "sentence-transformers>=5.6.0",
     "numpy>=1.24.0",
     "voyageai>=0.2.0",
     # New source types (v3.2.0+)
@@ -445,4 +446,14 @@ dev = [
     "boto3>=1.26.0",                    # AWS S3
     "google-cloud-storage>=2.10.0",     # Google Cloud Storage
     "azure-storage-blob>=12.17.0",      # Azure Blob Storage
+]
+
+[tool.uv]
+# Security floors for transitive-only deps (Dependabot criticals Oct 2026).
+constraint-dependencies = [
+    "certifi>=2026.10.19",
+    "anyio>=4.14.2",
+    "nltk>=3.10.3",
+    "PyJWT>=2.14.0",
+    "authlib>=1.6.9",
 ]
