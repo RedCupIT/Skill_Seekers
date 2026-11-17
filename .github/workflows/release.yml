@@ -103,7 +103,7 @@ jobs:
 
     - name: Create GitHub Release
       if: steps.check_release.outputs.exists == 'false'
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
       with:
         name: v${{ steps.get_version.outputs.VERSION }}
         tag_name: ${{ github.ref_name }}
