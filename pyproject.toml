@@ -47,7 +47,7 @@ dependencies = [
     "requests>=2.32.5",
     "beautifulsoup4>=4.14.2",
     "PyGithub>=2.5.0",
-    "GitPython>=3.1.40",
+    "GitPython>=3.1.59",
     "httpx>=0.28.1", # Required for async scraping (core feature)
     "anthropic>=0.76.0", # Required for AI enhancement (core feature)
     "PyMuPDF>=1.24.14",
@@ -174,7 +174,7 @@ video-full = [
 
 # RAG vector database upload support
 chroma = [
-    "chromadb>=0.4.0",
+    "chromadb>=1.5.9",
 ]
 
 weaviate = [
@@ -182,7 +182,7 @@ weaviate = [
 ]
 
 sentence-transformers = [
-    "sentence-transformers>=2.2.0",
+    "sentence-transformers>=5.6.0",
 ]
 
 pinecone = [
@@ -190,9 +190,9 @@ pinecone = [
 ]
 
 rag-upload = [
-    "chromadb>=0.4.0",
+    "chromadb>=1.5.9",
     "weaviate-client>=3.25.0",
-    "sentence-transformers>=2.2.0",
+    "sentence-transformers>=5.6.0",
     "pinecone>=5.0.0",
 ]
 
@@ -241,7 +241,7 @@ browser = [
 embedding = [
     "fastapi>=0.109.0",
     "uvicorn>=0.27.0",
-    "sentence-transformers>=2.3.0",
+    "sentence-transformers>=5.6.0",
     "numpy>=1.24.0",
     "voyageai>=0.2.0",
 ]
@@ -266,11 +266,11 @@ all = [
     "boto3>=1.34.0",
     "google-cloud-storage>=2.10.0",
     "azure-storage-blob>=12.19.0",
-    "chromadb>=0.4.0",
+    "chromadb>=1.5.9",
     "weaviate-client>=3.25.0",
     "pinecone>=5.0.0",
     "fastapi>=0.109.0",
-    "sentence-transformers>=2.3.0",
+    "sentence-transformers>=5.6.0",
     "numpy>=1.24.0",
     "voyageai>=0.2.0",
     # New source types (v3.2.0+)
